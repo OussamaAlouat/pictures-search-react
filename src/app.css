@@ -11,3 +11,12 @@
   padding-right: 5rem;
   padding-top: 2rem;
 }
+
+.header-container {
+  min-height: 100px;
+  background-color: lightgray;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
