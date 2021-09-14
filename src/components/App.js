@@ -2,6 +2,10 @@ import React from 'react';
 import SearchBar from './SearchBar';
 
 class App extends React.Component  {
+  onSearchSubmit(term) {
+    console.log('Term: ', term)
+  }
+
   render () {
     return (
       <div>
@@ -9,7 +13,7 @@ class App extends React.Component  {
           <h1>React Picture Search</h1>
         </div>
         <div className="container">
-          <SearchBar></SearchBar>
+          <SearchBar onSubmit={this.onSearchSubmit} />
 
         </div>
       </div>
