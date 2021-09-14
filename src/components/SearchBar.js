@@ -8,6 +8,12 @@ class SearchBar extends React.Component {
     this.setState({ item: value })
   }
 
+  onKeyPressed(e) {
+    if (e.key === 'Enter') {
+      console.log(this.state.item)
+    }
+  }
+
   render () {
     return(
     <div className="ui fluid icon input">
@@ -15,6 +21,8 @@ class SearchBar extends React.Component {
         type="text"
         placeholder="Search an image ..."
         onChange={(e) => this.onInputChange(e)}
+        value={ this.state.term }
+        onKeyPress={ e => this.onKeyPressed(e) }
       />
       <i className="search icon"></i>
     </div>
