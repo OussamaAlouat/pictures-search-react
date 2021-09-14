@@ -3,7 +3,7 @@ import SearchBar from './SearchBar';
 
 const App = () => {
   return (
-    <div className="">
+    <div>
       <div className="header-container">
         <h1>React Picture Search</h1>
       </div>
