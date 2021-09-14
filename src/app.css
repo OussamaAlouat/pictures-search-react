@@ -1,0 +1,25 @@
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-top: 2rem;
+}
+
+.header-container {
+  min-height: 100px;
+  background-color: lightgray;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.images-container {
+  padding-top: 10px;
+}
