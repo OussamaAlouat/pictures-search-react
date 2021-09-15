@@ -5,7 +5,7 @@ import ImageList from './ImageList';
 import './app.css'
 import Spiner from './Spiner';
 class App extends React.Component  {
-  state = { elements: [], spiner: false }
+  state = { elements: [], spiner: false, term: '' }
 
   onSearchSubmit = async (term) => {
     this.setState({ spiner: true })
@@ -15,9 +15,8 @@ class App extends React.Component  {
       },
     });
 
-    this.setState({ elements: images.data.results })
-    this.setState({ spiner: false })
-
+    this.setState({ elements: images.data.results, spiner: false, term: term })
+    document.getElementById('result').style.display = 'flex'
   }
 
   getContentToRender(){
@@ -30,7 +29,8 @@ class App extends React.Component  {
     } else {
       return (
         <div style= {{ height: '100%' }}>
-          <SearchBar onSubmit={this.onSearchSubmit} />
+          <SearchBar search={ this.state.term } onSubmit={this.onSearchSubmit} />
+          <div id="result">Results of: { this.state.term }</div>
           <ImageList images={this.state.elements}></ImageList>
         </div>
 
