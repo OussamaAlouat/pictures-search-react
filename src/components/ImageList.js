@@ -1,16 +1,12 @@
 import React from 'react';
+import ImageCard from './ImageCard';
 
  function showImages (im) {
   const images = [];
   console.log(im)
   for(const elem of im) {
     images.push(
-      <img
-        src={ elem.urls.small }
-        alt={ elem.alt_description }
-        id={elem.id}
-        key={elem.id}
-      />
+      <ImageCard key={elem.id} image={elem}></ImageCard>
     )
   }
 
