@@ -14,8 +14,6 @@ class ImageCard extends React.Component {
   }
 
   setSpans = () =>{
-    console.log('Height: ', this.imageRef.current.clientHeight);
-    console.log('Width: ', this.imageRef.current.clientWidth);
     const height = this.imageRef.current.clientHeight;
     const width = this.imageRef.current.clientWidth;
     if (height > width || width >=300) {
@@ -23,7 +21,6 @@ class ImageCard extends React.Component {
     } else {
         this.setState({ width })
     }
-
   }
 
   render () {

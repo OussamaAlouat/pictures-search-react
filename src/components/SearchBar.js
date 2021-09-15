@@ -11,7 +11,6 @@ class SearchBar extends React.Component {
   onKeyPressed(e) {
     if (e.key === 'Enter') {
       this.props.onSubmit(this.state.item)
-
     }
   }
 

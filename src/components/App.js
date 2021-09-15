@@ -15,9 +15,7 @@ class App extends React.Component  {
       },
     });
 
-    this.setState({ elements: images.data.results })
-    this.setState({ spiner: false })
-
+    this.setState({ elements: images.data.results, spiner: false })
   }
 
   getContentToRender(){
@@ -30,7 +28,6 @@ class App extends React.Component  {
     } else {
       return (
         <div style= {{ height: '100%' }}>
-          <SearchBar onSubmit={this.onSearchSubmit} />
           <ImageList images={this.state.elements}></ImageList>
         </div>
 
@@ -45,6 +42,7 @@ class App extends React.Component  {
           <h1>React Picture Search</h1>
         </div>
         <div className="container">
+          <SearchBar search={ this.state.term } onSubmit={this.onSearchSubmit} />
           {this.getContentToRender()}
         </div>
       </div>
