@@ -8,7 +8,13 @@ const ImageList = (props) => {
     return <ImageCard key={image.id} image={image}></ImageCard>
   });
 
-  return <div className="images-container">{ images}</div>
+  if (!images.length) {
+    return <div>No images to display</div>
+  }
+
+  return(
+    <div className="images-container">{ images}</div>
+  )
 }
 
 export default ImageList;
