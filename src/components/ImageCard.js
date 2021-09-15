@@ -3,7 +3,7 @@ import React from 'react';
 const ImageCard = (props) => {
   const { image } = props;
   return (
-    <div className="card">
+    <div className="card" style={ image.height > image.width ? { width: '300px' } : {}}>
       <img
         src={ image.urls.small }
         alt={ image.alt_description }
