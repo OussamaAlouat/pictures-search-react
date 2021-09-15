@@ -16,7 +16,6 @@ class App extends React.Component  {
     });
 
     this.setState({ elements: images.data.results, spiner: false })
-    document.getElementById('result').style.display = 'flex'
   }
 
   getContentToRender(){
