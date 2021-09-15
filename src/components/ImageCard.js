@@ -1,4 +1,5 @@
 import React from 'react';
+import './imageCard.css'
 
 const ImageCard = (props) => {
   const { image } = props;

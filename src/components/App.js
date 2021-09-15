@@ -1,8 +1,8 @@
 import React from 'react';
 import api from '../api/api';
 import SearchBar from './SearchBar';
-
 import ImageList from './ImageList';
+import './app.css'
 class App extends React.Component  {
   state = { elements: [] }
 
@@ -24,9 +24,7 @@ class App extends React.Component  {
         </div>
         <div className="container">
           <SearchBar onSubmit={this.onSearchSubmit} />
-
           <ImageList images={this.state.elements}></ImageList>
-
         </div>
       </div>
     );
