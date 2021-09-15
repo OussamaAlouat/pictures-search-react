@@ -16,6 +16,7 @@ const ImageCard = (props) => {
         </span>
         <span>
           <strong>Likes:</strong> { image.likes }
+          <i style={ {marginLeft : '4px'} } className="icon star"></i>
         </span>
 
         <span>
