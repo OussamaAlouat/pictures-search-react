@@ -29,7 +29,7 @@ class App extends React.Component  {
       )
     } else {
       return (
-        <div>
+        <div style= {{ height: '100%' }}>
           <SearchBar onSubmit={this.onSearchSubmit} />
           <ImageList images={this.state.elements}></ImageList>
         </div>

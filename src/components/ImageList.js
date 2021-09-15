@@ -2,6 +2,7 @@ import React from 'react';
 import ImageCard from './ImageCard';
 
 import './imageList.css';
+import NoData from './NoData';
 
 const ImageList = (props) => {
   const images  =  props.images.map(image => {
@@ -9,7 +10,7 @@ const ImageList = (props) => {
   });
 
   if (!images.length) {
-    return <div>No images to display</div>
+    return <NoData/>
   }
 
   return(
