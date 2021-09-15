@@ -1,20 +1,21 @@
 import React from 'react';
 import ImageCard from './ImageCard';
 
- function showImages (im) {
-  const images = [];
-  for(const elem of im) {
-    images.push(
-      <ImageCard key={elem.id} image={elem}></ImageCard>
-    )
-  }
-
-  return images;
-}
+import './imageList.css';
+import NoData from './NoData';
 
 const ImageList = (props) => {
-  const images  = showImages(props.images);
-  return <div className="images-container">{images}</div>
+  const images  =  props.images.map(image => {
+    return <ImageCard key={image.id} image={image}></ImageCard>
+  });
+
+  if (!images.length) {
+    return <NoData/>
+  }
+
+  return(
+    <div className="images-container">{ images}</div>
+  )
 }
 
 export default ImageList;

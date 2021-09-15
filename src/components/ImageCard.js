@@ -1,30 +1,59 @@
 import React from 'react';
+import './imageCard.css'
 
-const ImageCard = (props) => {
-  const { image } = props;
-  return (
-    <div className="card" style={ image.height > image.width ? { width: '300px' } : {}}>
-      <img
-        src={ image.urls.small }
-        alt={ image.alt_description }
-        id={ image.id }
-        key={ image.id }
-      />
-      <div className="card-description">
-        <span>
-          <strong>Description:</strong> { image.description || image.alt_description }
-        </span>
-        <span>
-          <strong>Likes:</strong> { image.likes }
-          <i style={ {marginLeft : '4px'} } className="icon star"></i>
-        </span>
+class ImageCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { width: 300 }
+    this.imageRef = React.createRef();
+  }
 
-        <span>
-          <strong>Created at:</strong> { image.created_at }
-        </span>
+  componentDidMount() {
+    this.imageRef.current.addEventListener('load', this.setSpans);
+
+  }
+
+  setSpans = () =>{
+    console.log('Height: ', this.imageRef.current.clientHeight);
+    console.log('Width: ', this.imageRef.current.clientWidth);
+    const height = this.imageRef.current.clientHeight;
+    const width = this.imageRef.current.clientWidth;
+    if (height > width || width >=300) {
+      this.setState({ width: 275 })
+    } else {
+        this.setState({ width })
+    }
+
+  }
+
+  render () {
+    const { image } = this.props;
+
+    return (
+      <div className="card" >
+        <img
+          ref={this.imageRef}
+          src={ image.urls.small }
+          alt={ image.alt_description }
+          id={ image.id }
+          style={ { width: `${this.state.width}px` } }
+        />
+        <div className="card-description">
+          <span>
+            <strong>Description:</strong> { image.description || image.alt_description }
+          </span>
+          <span>
+            <strong>Likes:</strong> { image.likes }
+            <i style={ {marginLeft : '4px'} } className="icon star"></i>
+          </span>
+
+          <span>
+            <strong>Created at:</strong> { image.created_at }
+          </span>
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default ImageCard
