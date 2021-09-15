@@ -7,13 +7,15 @@ img {
   border-radius: 20px;
   margin: 5px;
   min-height: 360px;
-  max-width: 420px;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
   padding: 15px;
+  align-items: center;
 }
 .card-description {
   margin-top: 10px;
+  width: 100%;
 }
 span {
   display: block;
