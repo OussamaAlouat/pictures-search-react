@@ -22,4 +22,28 @@
 }
 .images-container {
   padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+}
+
+img {
+  max-height: 300px;
+}
+
+.card {
+  background: lightgray;
+  border-radius: 20px;
+  margin: 5px;
+  min-height: 360px;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+.card-description {
+  margin-top: 10px;
+}
+span {
+  display: block;
 }
