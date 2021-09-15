@@ -2,7 +2,6 @@ import React from 'react';
 
 const ImageCard = (props) => {
   const { image } = props;
-  console.log(image)
   return (
     <div className="card">
       <img

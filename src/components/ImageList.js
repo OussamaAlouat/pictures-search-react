@@ -3,7 +3,6 @@ import ImageCard from './ImageCard';
 
  function showImages (im) {
   const images = [];
-  console.log(im)
   for(const elem of im) {
     images.push(
       <ImageCard key={elem.id} image={elem}></ImageCard>
